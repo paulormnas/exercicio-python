@@ -1,8 +1,9 @@
-import flask
+from flask import (Blueprint, request, render_template)
 from network import Bluetooth
 
-bt = Bluetooth()
+flask_service = Blueprint('service-blueprint', __name__)
 
-@app.route("/calibration", methods=['GET'])
-def calibration:
-    return bt.BluetoothManagerMeter()
+@flask_service.route("/calibration", methods=['GET'])
+def calibration():
+    bt = Bluetooth.BluetoothManagerMeter()
+    return "ok"
