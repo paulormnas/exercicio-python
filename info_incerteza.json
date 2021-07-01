@@ -1,0 +1,26 @@
+{  
+  "temp_components": { 
+      "value_resolution": 0.01,
+      "stability": 0.02,
+      "uniformity": 0.3,
+      "derive": 0.2,
+      "itemstability": 0.1
+   },
+
+  "hum_components": {
+      "value_resolution": 0.01,
+      "stability": 0.05,
+      "uniformity": 1.5,
+      "derive": 2,
+      "itemstability": 1.5
+  },
+
+  "standard_components": {
+      "st_error_estimate_temp": 0,
+      "st_error_estimate_hum": 0,
+      "st_temp_expanded_uncertainty": 0.3,
+      "st_hum_expanded_uncertainty": 1.2,
+      "k": 2,
+      "sensitivity_coefficient": 1
+  }
+}

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 import json
 import Adafruit_DHT
 import RPi.GPIO as GPIO
@@ -51,6 +52,7 @@ class Sensor(object):
         signature = str(signature)
         data['signature'] = signature
         self.register_measures(data)
+       
         return data
 
     @staticmethod
@@ -127,6 +129,12 @@ class DHT22(Sensor):
         temperature = self.format_data('TEMPERATURA', temperature)
 
         return [humidity, temperature]
+        
+    def get_queues_items(self):
+        temp = self.temperature_queue.get_items()
+        humi = self.humidity_queue.get_items()
+	
+        return temp, humi
 
 
 class PIR(Sensor):
